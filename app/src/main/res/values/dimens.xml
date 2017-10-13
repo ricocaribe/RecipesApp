@@ -4,5 +4,11 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="content_item_user_padding">8dp</dimen>
     <dimen name="item_searched_recipe_padding">1dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+
+    <dimen name="cv_recipe_detail_padding_title">24dp</dimen>
+    <dimen name="cv_recipe_detail_padding_subtitle">8dp</dimen>
+    <dimen name="cv_recipe_detail_padding_content">6dp</dimen>
+    <dimen name="cv_recipe_detail_margin">8dp</dimen>
 
 </resources>

@@ -3,6 +3,7 @@ package com.jmricop.recipesapp.view.activities;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +35,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_detail);
 
         ButterKnife.inject(this);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if(getSupportActionBar()!=null) getSupportActionBar().setHomeButtonEnabled(true);
 
         Recipes.Recipe recipe = (Recipes.Recipe) getIntent().getSerializableExtra("recipe");
 
