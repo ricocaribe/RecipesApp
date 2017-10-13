@@ -1,9 +1,13 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="content_item_user_padding">8dp</dimen>
-    <dimen name="item_searched_recipe_padding">1dp</dimen>
+
+    <!--Item recipe-->
+    <dimen name="content_item_recipe_padding">8dp</dimen>
+    <dimen name="content_title_recipe_padding">4dp</dimen>
+    <dimen name="item_searched_recipe_padding">4dp</dimen>
+
+    <!--RecipeDetail-->
     <dimen name="app_bar_height">180dp</dimen>
 
     <dimen name="cv_recipe_detail_padding_title">24dp</dimen>
