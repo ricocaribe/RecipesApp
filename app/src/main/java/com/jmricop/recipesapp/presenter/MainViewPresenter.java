@@ -24,22 +24,16 @@ public class MainViewPresenter implements MainViewInteractor.MainPresenter {
     @Override
     public void searchRecipes(String query) {
 
-        int DEFAULT_PAGINATION = 10;
-
-        RecipesApiClient.apiService().create(RecipesApiInterface.class).searchRecipes(query, DEFAULT_PAGINATION).enqueue(new Callback<Recipes>() {
+        RecipesApiClient.apiService().create(RecipesApiInterface.class).searchRecipes(query).enqueue(new Callback<Recipes>() {
             @Override
             public void onResponse(Call<Recipes> call, Response<Recipes> recipesResponse) {
-
                 if (recipesResponse.isSuccessful()) {
                     mainView.setRecipesListAdapter(recipesResponse.body().results);
                 }
-                else mainView.showAlert(recipesResponse.message());
-
             }
 
             @Override
             public void onFailure(Call<Recipes> call, Throwable t) {
-                //mainView.showAlert(mainView.getContext().getResources().getString(R.string.txt_error_something_wrong));
                 call.cancel();
                 t.printStackTrace();
             }

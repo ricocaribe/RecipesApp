@@ -8,7 +8,6 @@ import com.jmricop.recipesapp.model.Recipes;
 public interface MainViewInteractor {
 
     interface MainView {
-        void showAlert(String message);
         void setRecipesListAdapter(Recipes.Recipe[] recipes);
         void showDetailFragment(Recipes.Recipe recipe, ImageView recipeImage);
     }

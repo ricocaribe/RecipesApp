@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchedRecipesAdapter = new SearchedRecipesAdapter(this);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -61,17 +62,20 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         return true;
     }
 
+
     @Override
     public boolean onQueryTextSubmit(String query) {
         mainPresenter.searchRecipes(query);
         return false;
     }
 
+
     @Override
     public boolean onQueryTextChange(String newText) {
         mainPresenter.searchRecipes(newText);
         return false;
     }
+
 
     private void setupSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -81,16 +85,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.setOnQueryTextListener(this);
     }
 
-    @Override
-    public void showAlert(String message) {
-
-    }
 
     @Override
     public void setRecipesListAdapter(Recipes.Recipe[] recipes) {
         searchedRecipesAdapter.setSearchedRecipes(recipes);
         rvSearchedRecipes.setAdapter(searchedRecipesAdapter);
     }
+
 
     @Override
     public void showDetailFragment(Recipes.Recipe recipe, ImageView recipeImage){

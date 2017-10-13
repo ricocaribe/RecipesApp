@@ -11,7 +11,6 @@ public interface RecipesApiInterface {
     String API_BASE_URL = "http://www.recipepuppy.com/";
 
     @GET("/api/")
-    Call<Recipes> searchRecipes(@Query(value = "q") String query,
-                                @Query(value = "p") int page);
+    Call<Recipes> searchRecipes(@Query(value = "q") String query);
 
 }
