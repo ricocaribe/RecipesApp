@@ -1,7 +1,6 @@
 package com.jmricop.recipesapp.presenter;
 
 
-import com.jmricop.recipesapp.R;
 import com.jmricop.recipesapp.api.RecipesApiClient;
 import com.jmricop.recipesapp.api.RecipesApiInterface;
 import com.jmricop.recipesapp.interactor.MainViewInteractor;
