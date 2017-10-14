@@ -27,6 +27,7 @@ import dagger.ObjectGraph;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, MainViewInteractor.MainView{
 
+
     @Inject
     MainViewInteractor.MainPresenter mainPresenter;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     RecyclerView rvSearchedRecipes;
 
     private SearchedRecipesAdapter searchedRecipesAdapter;
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +74,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        mainPresenter.searchRecipes(newText);
+        if(!newText.isEmpty()) mainPresenter.searchRecipes(newText);
         return false;
     }
 
 
     private void setupSearchView(Menu menu) {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint(getString(R.string.search_hint));
         searchView.setOnQueryTextListener(this);
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public void showDetailFragment(Recipes.Recipe recipe, ImageView recipeImage){
+        searchView.clearFocus();
         Intent intent = new Intent(MainActivity.this, RecipeDetailActivity.class);
         intent.putExtra("recipe", recipe);
 

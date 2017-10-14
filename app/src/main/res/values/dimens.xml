@@ -13,6 +13,6 @@
     <dimen name="cv_recipe_detail_padding_title">24dp</dimen>
     <dimen name="cv_recipe_detail_padding_subtitle">8dp</dimen>
     <dimen name="cv_recipe_detail_padding_content">6dp</dimen>
-    <dimen name="cv_recipe_detail_margin">8dp</dimen>
+    <dimen name="cv_recipe_detail_margin">4dp</dimen>
 
 </resources>

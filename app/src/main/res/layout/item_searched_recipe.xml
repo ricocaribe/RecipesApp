@@ -25,14 +25,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/content_item_recipe_padding">
+        android:paddingStart="@dimen/content_item_recipe_padding"
+        android:paddingEnd="@dimen/content_item_recipe_padding">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recipeTitle"
             android:maxLines="1"
-            android:paddingBottom="@dimen/content_title_recipe_padding"
+            android:ellipsize="end"
+            android:layout_marginBottom="@dimen/content_title_recipe_padding"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
 
         <TextView
@@ -40,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/recipeIngredients"
             android:maxLines="1"
+            android:ellipsize="end"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
 
         <TextView
@@ -47,6 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/recipeHref"
             android:maxLines="1"
+            android:ellipsize="end"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
 
     </LinearLayout>
